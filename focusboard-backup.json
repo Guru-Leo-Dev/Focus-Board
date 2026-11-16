@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1794869836282,
+  "updatedAt": 1794870165986,
   "boards": [
     {
       "id": "mwjucokipceho2",
@@ -234,11 +234,6 @@
         {
           "id": "mwjujpsidefr73",
           "name": "Resource",
-          "color": "#14a3a3"
-        },
-        {
-          "id": "mwjv1nako9ohfn",
-          "name": "g",
           "color": "#14a3a3"
         },
         {
