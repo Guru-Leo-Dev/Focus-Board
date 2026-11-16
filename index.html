@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FocusBoard · study &amp; interview planner</title>
+  <meta name="theme-color" content="#eef1f7">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f6bed'/%3E%3Crect x='6' y='7' width='5' height='17' rx='1.5' fill='white'/%3E%3Crect x='13.5' y='7' width='5' height='11' rx='1.5' fill='white'/%3E%3Crect x='21' y='7' width='5' height='14' rx='1.5' fill='white'/%3E%3C/svg%3E">
+  <script>
+    /* Apply the saved theme before first paint so there is no flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem('focusboard.theme');
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5" height="14" rx="1.5"/><rect x="10" y="4" width="5" height="9" rx="1.5"/><rect x="17" y="4" width="4" height="12" rx="1.5"/></svg>
+      </span>
+      <span class="brand-name">FocusBoard</span>
+    </div>
+
+    <button id="boardMenuBtn" class="btn boardswitch" type="button" aria-haspopup="menu" title="Switch, create or rename boards">
+      <span id="boardName">Board</span>
+    </button>
+
+    <div class="spacer"></div>
+
+    <label class="search">
+      <span data-icon="search" data-size="16" aria-hidden="true"></span>
+      <input id="search" type="search" placeholder="Search cards   ( / )" autocomplete="off" aria-label="Search cards">
+    </label>
+
+    <button id="syncBtn" class="btn sync" type="button" data-state="local" title="Backup &amp; sync">
+      <span class="dot" aria-hidden="true"></span><span class="sync-text">Link backup</span>
+    </button>
+
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Switch theme" title="Switch theme ( t )"></button>
+  </header>
+
+  <div id="toolbar" class="toolbar" aria-label="Board filters"></div>
+
+  <main id="board" class="board" aria-label="Board"></main>
+
+  <!-- ───────── Card details ───────── -->
+  <dialog id="cardDialog" class="modal modal-card" aria-label="Card details">
+    <div class="modal-head">
+      <input id="cdTitle" class="title-input" maxlength="200" aria-label="Card title" autocomplete="off">
+      <button class="icon-btn" type="button" data-close aria-label="Close" data-icon="x"></button>
+    </div>
+    <div class="modal-body">
+      <div class="cd-grid">
+        <div class="cd-main">
+          <section class="sec">
+            <h4 class="sec-title">Labels</h4>
+            <div id="cdLabels" class="chips"></div>
+          </section>
+
+          <section class="sec">
+            <h4 class="sec-title">Notes</h4>
+            <div id="cdDescView" class="desc-view" tabindex="0" role="button" aria-label="Edit notes"></div>
+            <textarea id="cdDesc" class="input area" rows="7" hidden placeholder="Notes, links, resources, answers…"></textarea>
+          </section>
+
+          <section class="sec">
+            <div class="sec-row">
+              <h4 class="sec-title">Checklist <span id="cdProg" class="muted"></span></h4>
+              <button id="cdClearDone" class="link-btn" type="button" hidden>Clear completed</button>
+            </div>
+            <div class="progress" id="cdProgress"><span id="cdBar"></span></div>
+            <ul id="cdChecklist" class="checklist"></ul>
+            <form id="cdAddItem" class="inline-form">
+              <input id="cdNewItem" class="input" placeholder="Add an item and press Enter" maxlength="300" autocomplete="off" aria-label="New checklist item">
+              <button class="btn" type="submit">Add</button>
+            </form>
+          </section>
+        </div>
+
+        <aside class="cd-side">
+          <label class="field"><span>List</span><select id="cdList" class="input"></select></label>
+          <div class="field">
+            <label for="cdDue">Due date</label>
+            <span class="due-row">
+              <input id="cdDue" type="date" class="input">
+              <button id="cdDueClear" class="icon-btn sm" type="button" aria-label="Clear due date" data-icon="x" data-size="16"></button>
+            </span>
+          </div>
+          <div class="side-actions">
+            <button id="cdDuplicate" class="btn" type="button" data-icon="copy" data-size="16">Duplicate</button>
+            <button id="cdDelete" class="btn subtle-danger" type="button" data-icon="trash" data-size="16">Delete</button>
+          </div>
+          <p id="cdMeta" class="muted small"></p>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ───────── Labels ───────── -->
+  <dialog id="labelsDialog" class="modal modal-sm" aria-label="Edit labels">
+    <div class="modal-head">
+      <h3 class="modal-title">Labels</h3>
+      <button class="icon-btn" type="button" data-close aria-label="Close" data-icon="x"></button>
+    </div>
+    <div class="modal-body">
+      <p class="muted small">Labels belong to this board. Click a colour square to change it.</p>
+      <div id="labelsList" class="labels-list"></div>
+      <button id="addLabelBtn" class="btn" type="button" data-icon="plus" data-size="16">New label</button>
+    </div>
+  </dialog>
+
+  <!-- ───────── Backup & sync ───────── -->
+  <dialog id="syncDialog" class="modal modal-sm" aria-label="Backup and sync">
+    <div class="modal-head">
+      <h3 class="modal-title">Backup &amp; sync</h3>
+      <button class="icon-btn" type="button" data-close aria-label="Close" data-icon="x"></button>
+    </div>
+    <div id="syncBody" class="modal-body"></div>
+  </dialog>
+  <input id="importInput" type="file" accept=".json,application/json" hidden>
+
+  <!-- ───────── New board ───────── -->
+  <dialog id="newBoardDialog" class="modal modal-sm" aria-label="New board">
+    <form id="newBoardForm" class="modal-form">
+      <div class="modal-head">
+        <h3 class="modal-title">New board</h3>
+        <button class="icon-btn" type="button" data-close aria-label="Close" data-icon="x"></button>
+      </div>
+      <div class="modal-body">
+        <label class="field"><span>Name</span>
+          <input id="nbName" class="input" maxlength="60" placeholder="e.g. System design prep" autocomplete="off">
+        </label>
+        <div class="field"><span>Start from</span><div id="tplList" class="tpl-list"></div></div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn" type="button" data-close>Cancel</button>
+        <button class="btn primary" type="submit">Create board</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ───────── Generic confirm / prompt ───────── -->
+  <dialog id="askDialog" class="modal modal-sm" aria-labelledby="askTitle">
+    <div class="modal-body ask">
+      <h3 id="askTitle" class="modal-title"></h3>
+      <p id="askText" class="muted"></p>
+      <input id="askInput" class="input" hidden autocomplete="off" maxlength="80" aria-labelledby="askTitle">
+      <div id="askActions" class="modal-foot flat"></div>
+    </div>
+  </dialog>
+
+  <noscript><p style="padding:24px">FocusBoard needs JavaScript to run.</p></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
