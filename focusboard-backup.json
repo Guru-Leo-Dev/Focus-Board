@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "updatedAt": 1794869836282,
+  "boards": [
+    {
+      "id": "mwjucokipceho2",
+      "name": "Study Plan",
+      "createdAt": 1794868482402,
+      "labels": [
+        {
+          "id": "mwjucokitdlsg4",
+          "name": "Theory",
+          "color": "#3b82f6"
+        },
+        {
+          "id": "mwjucokitexmcw",
+          "name": "Practice",
+          "color": "#3fa66b"
+        },
+        {
+          "id": "mwjucokijy0zg2",
+          "name": "Revise",
+          "color": "#e07b2d"
+        },
+        {
+          "id": "mwjucokierszef",
+          "name": "Important",
+          "color": "#d9534f"
+        },
+        {
+          "id": "mwjucokiba64ut",
+          "name": "Interview",
+          "color": "#8e5bd6"
+        },
+        {
+          "id": "mwjucoki5xwkab",
+          "name": "Resource",
+          "color": "#14a3a3"
+        }
+      ],
+      "lists": [
+        {
+          "id": "mwjucokild9cgu",
+          "title": "Backlog",
+          "cards": [
+            {
+              "id": "mwjucokiu0povu",
+              "title": "👋 Welcome! Click this card",
+              "desc": "Drag cards between lists, or click a card to add notes, links, labels, a checklist and a due date.\n\nAdd many cards at once: type one topic per line (Shift+Enter for a new line), then press Enter.\n\nEverything is saved in this browser instantly. Click the sync button (top right) to link a JSON file and it is backed up automatically.",
+              "labels": [
+                "mwjucokiba64ut"
+              ],
+              "due": "",
+              "checklist": [
+                {
+                  "id": "mwjucoki1nlvcq",
+                  "text": "Link a JSON backup file (top-right button)",
+                  "done": false
+                },
+                {
+                  "id": "mwjucokic4o9r6",
+                  "text": "Try the dark theme",
+                  "done": false
+                },
+                {
+                  "id": "mwjucokins0zaa",
+                  "text": "Add my first topic",
+                  "done": false
+                }
+              ],
+              "createdAt": 1794868482402,
+              "updatedAt": 1794868482402
+            }
+          ]
+        },
+        {
+          "id": "mwjucokijaa4ic",
+          "title": "This week",
+          "cards": []
+        },
+        {
+          "id": "mwjucokiwqjqao",
+          "title": "Learning",
+          "cards": []
+        },
+        {
+          "id": "mwjucokinibtw9",
+          "title": "Revise",
+          "cards": []
+        },
+        {
+          "id": "mwjucoki55p1ia",
+          "title": "Done",
+          "cards": []
+        }
+      ]
+    },
+    {
+      "id": "mwjucoki3o5a5f",
+      "name": "Interview Tracker",
+      "createdAt": 1794868482402,
+      "labels": [
+        {
+          "id": "mwjucokiermb9u",
+          "name": "Theory",
+          "color": "#3b82f6"
+        },
+        {
+          "id": "mwjucokihq6qh8",
+          "name": "Practice",
+          "color": "#3fa66b"
+        },
+        {
+          "id": "mwjucoki47eoga",
+          "name": "Revise",
+          "color": "#e07b2d"
+        },
+        {
+          "id": "mwjucokiig92ra",
+          "name": "Important",
+          "color": "#d9534f"
+        },
+        {
+          "id": "mwjucoki2h6d9z",
+          "name": "Interview",
+          "color": "#8e5bd6"
+        },
+        {
+          "id": "mwjucokij2aee3",
+          "name": "Resource",
+          "color": "#14a3a3"
+        },
+        {
+          "id": "mwjuxs1jm53n3l",
+          "name": "this",
+          "color": "#a31414"
+        }
+      ],
+      "lists": [
+        {
+          "id": "mwjucokitv4xmk",
+          "title": "Wishlist",
+          "cards": [
+            {
+              "id": "mwjucokinxt8xn",
+              "title": "Company — Role (sample card)",
+              "desc": "Job link, recruiter name, what they asked, what to improve next time…",
+              "labels": [],
+              "due": "",
+              "checklist": [
+                {
+                  "id": "mwjucokig1kdau",
+                  "text": "Tailor resume",
+                  "done": false
+                },
+                {
+                  "id": "mwjucokirnvnct",
+                  "text": "Research the team",
+                  "done": false
+                },
+                {
+                  "id": "mwjucokihhu5b1",
+                  "text": "Prepare questions to ask",
+                  "done": false
+                }
+              ],
+              "createdAt": 1794868482402,
+              "updatedAt": 1794868482402
+            }
+          ]
+        },
+        {
+          "id": "mwjucokip8ao5z",
+          "title": "Applied",
+          "cards": []
+        },
+        {
+          "id": "mwjucoki9yrod0",
+          "title": "Screening",
+          "cards": []
+        },
+        {
+          "id": "mwjucoki6hnvzk",
+          "title": "Technical rounds",
+          "cards": []
+        },
+        {
+          "id": "mwjucokiq40skd",
+          "title": "Final / HR",
+          "cards": []
+        },
+        {
+          "id": "mwjucokird65v4",
+          "title": "Offer",
+          "cards": []
+        },
+        {
+          "id": "mwjucokihfki6t",
+          "title": "Closed",
+          "cards": []
+        }
+      ]
+    },
+    {
+      "id": "mwjujpsigiset8",
+      "name": "Prep",
+      "createdAt": 1794868810578,
+      "labels": [
+        {
+          "id": "mwjujpsimrir2x",
+          "name": "Theory",
+          "color": "#3b82f6"
+        },
+        {
+          "id": "mwjujpsi75ij3g",
+          "name": "Practice",
+          "color": "#3fa66b"
+        },
+        {
+          "id": "mwjujpsidtzz97",
+          "name": "Revise",
+          "color": "#e07b2d"
+        },
+        {
+          "id": "mwjujpsiiqjepn",
+          "name": "Important",
+          "color": "#d9534f"
+        },
+        {
+          "id": "mwjujpsih604yc",
+          "name": "Interview",
+          "color": "#8e5bd6"
+        },
+        {
+          "id": "mwjujpsidefr73",
+          "name": "Resource",
+          "color": "#14a3a3"
+        },
+        {
+          "id": "mwjv1nako9ohfn",
+          "name": "g",
+          "color": "#14a3a3"
+        },
+        {
+          "id": "mwjv4j5mk5qqq8",
+          "name": "water ",
+          "color": "#d6458f"
+        },
+        {
+          "id": "mwjv4ku1fyooyl",
+          "name": "grass",
+          "color": "#3fa66b"
+        }
+      ],
+      "lists": [
+        {
+          "id": "mwjv39c2wsnuwg",
+          "title": "cc",
+          "cards": [
+            {
+              "id": "mwjv3guw79nwaa",
+              "title": "nsd",
+              "desc": "b nshj j🫟",
+              "labels": [
+                "mwjujpsidtzz97"
+              ],
+              "due": "2026-11-18",
+              "checklist": [],
+              "createdAt": 1794869732120,
+              "updatedAt": 1794869762476
+            }
+          ]
+        },
+        {
+          "id": "mwjv3cndiolwlg",
+          "title": "sdssf",
+          "cards": [
+            {
+              "id": "mwjv4z71el99mq",
+              "title": "warfer",
+              "desc": "💧",
+              "labels": [
+                "mwjv4j5mk5qqq8"
+              ],
+              "due": "2026-11-10",
+              "checklist": [],
+              "createdAt": 1794869802541,
+              "updatedAt": 1794869836282
+            },
+            {
+              "id": "mwjv53pekxzu83",
+              "title": "water ds",
+              "desc": "",
+              "labels": [],
+              "due": "",
+              "checklist": [],
+              "createdAt": 1794869808386,
+              "updatedAt": 1794869808386
+            },
+            {
+              "id": "mwjv59y5wadky3",
+              "title": "water",
+              "desc": "",
+              "labels": [],
+              "due": "",
+              "checklist": [],
+              "createdAt": 1794869816477,
+              "updatedAt": 1794869816477
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
